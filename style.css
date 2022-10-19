@@ -1,0 +1,375 @@
+/* resets */
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* main */
+header {
+
+    z-index: 10;
+}
+
+.header-banner {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 420px;
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+.menu {
+    background: #292f36;
+    height: 4rem;
+}
+
+.menu ol {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.menu>ol {
+    max-width: 1000px;
+    padding: 0 2rem;
+    display: flex;
+}
+
+.menu>ol>.menu-item {
+    flex: 1;
+    padding: 0.75rem 0;
+}
+
+.menu>ol>.menu-item:after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    bottom: 5px;
+    left: calc(50% - 2px);
+    background: #f2d2fe;
+    will-change: transform;
+    transform: scale(0);
+    transition: transform 0.2s ease;
+}
+
+.menu>ol>.menu-item:hover:after {
+    transform: scale(1);
+}
+
+.menu-item {
+    position: relative;
+    line-height: 2.5rem;
+    text-align: center;
+}
+
+.menu-item a {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    color: #FFF;
+}
+
+.sub-menu .menu-item {
+    padding: 0.75rem 0;
+    background: #292f36;
+    opacity: 0;
+    transform-origin: bottom;
+    animation: enter 0.2s ease forwards;
+}
+
+.sub-menu .menu-item:nth-child(1) {
+    animation-duration: 0.2s;
+    animation-delay: 0s;
+}
+
+.sub-menu .menu-item:nth-child(2) {
+    animation-duration: 0.3s;
+    animation-delay: 0.1s;
+}
+
+.sub-menu .menu-item:nth-child(3) {
+    animation-duration: 0.4s;
+    animation-delay: 0.2s;
+}
+
+.sub-menu .menu-item:hover {
+    background: #F8B195;
+}
+
+.sub-menu .menu-item a {
+    padding: 0 0.75rem;
+}
+
+
+.sub-menu {
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    display: none;
+    z-index: 1;
+}
+
+.menu-item:hover>.sub-menu {
+    display: block;
+}
+
+
+
+html,
+body {
+    font-size: 16px;
+    font-family: 'Fira Mono', monospace;
+    margin: 0;
+}
+
+/*    background: #2A363B; */
+
+* {
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+@keyframes enter {
+    from {
+        opacity: 0;
+        transform: scaleY(0.98) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.patron {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.text {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+
+}
+
+.block {
+
+    display: flex;
+    align-items: flex-start;
+    background: rgb(233 233 233);
+    padding: 1rem;
+    max-width: 80%;
+    margin: 1rem 0 1rem 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.block>img {
+    width: 200px;
+    margin: 0 1rem 0 0;
+}
+
+.block>div {
+    flex: 1;
+    text-overflow: ellipsis;
+}
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {
+    margin: 0 -5px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the counter cards */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+    margin: 1rem;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .menu {
+        position: relative;
+    }
+
+    .menu:after {
+        content: '';
+        position: absolute;
+        top: calc(50% - 2px);
+        right: 1rem;
+        width: 30px;
+        height: 4px;
+        background: #FFF;
+        box-shadow: 0 10px #FFF, 0 -10px #FFF;
+    }
+
+    .menu>ol {
+        display: none;
+        background: #292f36;
+        flex-direction: column;
+        justify-content: center;
+        animation: fade 0.2s ease-out;
+    }
+
+    .menu>ol>.menu-item {
+        flex: 0;
+        opacity: 0;
+        animation: enter 0.3s ease-out forwards;
+    }
+
+    .menu>ol>.menu-item:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .menu>ol>.menu-item:nth-child(2) {
+        animation-delay: 0.1s;
+    }
+
+    .menu>ol>.menu-item:nth-child(3) {
+        animation-delay: 0.2s;
+    }
+
+    .menu>ol>.menu-item:nth-child(4) {
+        animation-delay: 0.3s;
+    }
+
+    .menu>ol>.menu-item:nth-child(5) {
+        animation-delay: 0.4s;
+    }
+
+    .menu>ol>.menu-item+.menu-item {
+        margin-top: 0.75rem;
+    }
+
+    .menu>ol>.menu-item:after {
+        left: auto;
+        right: 1rem;
+        bottom: calc(50% - 2px);
+    }
+
+    .menu>ol>.menu-item:hover {
+        z-index: 1;
+    }
+
+    .menu:hover>ol {
+        display: flex;
+    }
+
+    .menu:hover:after {
+        box-shadow: none;
+    }
+    .sub-menu .menu-item {
+        background: #292f36;
+    }
+    .sub-menu {
+        width: 100vw;
+        left: -2rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 960px) {
+    .block {
+        display: block;
+        align-items: flex-start;
+        background: rgb(233 233 233);
+        padding: 1rem;
+        max-width: 80%;
+        margin: 1rem 0 1rem 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .block>img {
+        width: 100%;
+        margin: 0 1rem 0 0;
+    }
+
+    .content {
+        padding: 2rem 0;
+    }
+
+    article {
+        float: none;
+        margin: 0 auto;
+        width: 96%;
+    }
+
+    article:last-of-type {
+        margin-bottom: 3rem;
+    }
+
+    aside {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+}
