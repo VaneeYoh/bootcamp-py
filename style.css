@@ -1,12 +1,13 @@
 
-.root{
+:root {
     --background-color: #f6f5f6;
-    --nav:#292f36;
+    --nav-color:#292f36;
     --nav-item: #f2d2fe;
     --product-detail: #fbb72c;
     --button-heart: #d079ad;
     --button: #2b323a;
 }
+
 html,
 body {
     font-size: 16px;
@@ -35,7 +36,7 @@ img {
 }
 
 .menu {
-    background: var(--nav);
+    background-color: var(--nav-color);
     height: 4rem;
 }
 
@@ -91,7 +92,7 @@ img {
 
 .sub-menu .menu-item {
     padding: 0.75rem 0;
-    background: var(--nav);
+    background: var(--nav-color);
     opacity: 0;
     transform-origin: bottom;
     animation: enter 0.2s ease forwards;
@@ -330,7 +331,6 @@ img {
 
 .product-links button {
     display: flex;
-
     display: inline-block;
     margin: 1px;
     border-radius: 2px;
@@ -368,7 +368,7 @@ img {
 
     .menu>ol {
         display: none;
-        background: var(--nav);
+        background: var(--nav-color);
         flex-direction: column;
         justify-content: center;
         animation: fade 0.2s ease-out;
@@ -422,7 +422,7 @@ img {
         box-shadow: none;
     }
     .sub-menu .menu-item {
-        background: var(--nav);
+        background: var(--nav-color);
     }
     .sub-menu {
         width: 100vw;
