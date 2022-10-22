@@ -1,11 +1,18 @@
 
-
+.root{
+    --background-color: #f6f5f6;
+    --nav:#292f36;
+    --nav-item: #f2d2fe;
+    --product-detail: #fbb72c;
+    --button-heart: #d079ad;
+    --button: #2b323a;
+}
 html,
 body {
     font-size: 16px;
     font-family: 'Fira Mono', monospace;
     margin: 0;   
-    background-color: #f6f5f6; 
+    background-color: var(--background-color); 
 }
 
 
@@ -28,7 +35,7 @@ img {
 }
 
 .menu {
-    background: #292f36;
+    background: var(--nav);
     height: 4rem;
 }
 
@@ -57,7 +64,7 @@ img {
     border-radius: 50%;
     bottom: 5px;
     left: calc(50% - 2px);
-    background: #f2d2fe;
+    background: var(--nav-item);
     will-change: transform;
     transform: scale(0);
     transition: transform 0.2s ease;
@@ -84,7 +91,7 @@ img {
 
 .sub-menu .menu-item {
     padding: 0.75rem 0;
-    background: #292f36;
+    background: var(--nav);
     opacity: 0;
     transform-origin: bottom;
     animation: enter 0.2s ease forwards;
@@ -106,7 +113,7 @@ img {
 }
 
 .sub-menu .menu-item:hover {
-    background: #d079ad;
+    background: var(--button-heart);
 }
 
 .sub-menu .menu-item a {
@@ -280,7 +287,7 @@ img {
 }
 
 .product-details h4 a:hover {
-    color: #fbb72c;
+    color: var(--product-detail);
 }
 
 .product-details p {
@@ -303,7 +310,7 @@ img {
 
 .product-price {
     font-size: 18px;
-    color: #fbb72c;
+    color: var(--product-detail);
     font-weight: 600;
 }
 
@@ -334,10 +341,10 @@ img {
     border: none;
     outline: 0;
     padding: 8px;
-    background-color: #2b323a;
+    background-color: var(--button);
 }
 .like {
-    background-color: #d079ad !important;
+    background-color: var(--button-heart) !important;
 }
   .product-links button:hover {
     opacity: 0.7;
@@ -361,7 +368,7 @@ img {
 
     .menu>ol {
         display: none;
-        background: #292f36;
+        background: var(--nav);
         flex-direction: column;
         justify-content: center;
         animation: fade 0.2s ease-out;
@@ -415,7 +422,7 @@ img {
         box-shadow: none;
     }
     .sub-menu .menu-item {
-        background: #292f36;
+        background: var(--nav);
     }
     .sub-menu {
         width: 100vw;
